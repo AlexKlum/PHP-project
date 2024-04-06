@@ -1,0 +1,34 @@
+1. docker-compose build
+
+2. docker-compose up
+
+pro2-app_php - Attach shell
+
+In the terminal: 
+
+3. cd pro2-app
+
+4. composer install
+
+5. Change .env.example -> .env
+
+6. run php artisan key:generate
+
+7. Configure .env information to your own settings:
+
+(docker inspect -f '{{.Name}} {{ range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' (docker ps -aq))
+pro2-app_db_1 = (YOUR IP)
+DB_HOST= (YOUR IP)
+DB_DATABASE= (New empty database) Create a new empty database in adminer
+DB_USERNAME=root
+DB_PASSWORD=example
+
+8. cd pro2-app (In bash) To create a new bash: 
+- docker ps
+- copy the CONTAINER ID of pro2-app_php
+-docker exec -it (your CONTAINER ID) bash
+
+9. php artisan migrate
+
+10. php artisan serve --host 0.0.0.0  --port 8000
+
