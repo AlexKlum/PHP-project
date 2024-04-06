@@ -1,3 +1,3 @@
 # PHP-project
 
-A project where I worked with PHP & Laravel
+A small project where I worked with PHP & Laravel
